@@ -15,6 +15,7 @@ const server = http.createServer((req, res) => {
         });
     }).catch(error => {
         res.statusCode = 403;
+        console.error(error.message);
         res.end(error.message);
     });
 });

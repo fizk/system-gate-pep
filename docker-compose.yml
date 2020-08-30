@@ -12,3 +12,5 @@ services:
             - 9090:80
         volumes:
             - ./build:/app/src
+            - ./node_modules:/app/node_modules
+        command: /app/node_modules/.bin/nodemon ./src/index.js

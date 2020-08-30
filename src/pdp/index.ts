@@ -25,7 +25,7 @@ export default (secret: string, url: string, method: string, headers: IncomingHt
         jwt.verify(authValue[2], secret, function (error, decoded) {
             return error
                 ? fail(error)
-                : pass((decoded! as { payload: object}).payload as User);
+                : pass({...{id: null},...(decoded! as User)});
         });
     });
 }
